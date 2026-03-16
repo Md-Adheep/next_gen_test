@@ -431,7 +431,7 @@ let allStudents   = [];
 // ── Auth ─────────────────────────────────────────────
 async function checkAuth(){
   try{
-    const r = await fetch('/auth.php?action=login',{credentials:'include'});
+    const r = await fetch('/auth.php?action=me',{credentials:'include'});
     const j = await r.json();
     if(!j.success){ location.href='login.html'; return null; }
     const u = j.data;
